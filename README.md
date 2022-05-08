@@ -18,22 +18,22 @@ This project is our Portfolio Project, concluding our Foundations Term at [ALX S
 
 [Github Profile](https://github.com/nazrawimedhin)
 
-**Product owner**
-**Front-end developer**
+* Product owner
+* Front-end developer
 
 #### Dereje Desta
 
 [Github Profile](https://github.com/dere7)
 
-**Project manager**
-**Back-end developer**
+* Project manager
+* Back-end developer
 
 #### Robel Abebe
 
 [Github Profile](https://github.com/Robi000)
 
-**Quality assurance engineer**
-**Back-end developer**
+* Quality assurance engineer
+* Back-end developer
 
 ### Blog Posts
 
