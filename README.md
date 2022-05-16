@@ -1,4 +1,4 @@
-# Temari Share ~ Let’s learn and grow together
+# Temari Share ~ Let’s learn together
 
 ![logo](logo.png)
 
