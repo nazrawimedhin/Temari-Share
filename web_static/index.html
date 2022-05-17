@@ -8,40 +8,55 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <script src="js/index.js"></script>
     <title>Temari Share</title>
   </head>
 
   <body>
     <section class="section has-background-white-ter">
-        <div class="container">
-          <div class="carousel" style="overflow: hidden">
-            <div class="item-1">
-              <div class="columns">
-                <div class="column is-half">
-                  <h1 class="title is-1">Welcome to Temari Share</h1>
-                  <h3 class="subtitle pt-2 is-3">Let's Learn Together</h3>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit nesciunt totam modi, 
-                    nulla ea, ipsum, vero neque adipisci eos itaque numquam architecto. 
-                    Incidunt dignissimos id aliquid harum at consectetur provident?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut nostrum harum 
-                    quasi quis molestias vel ad corrupti culpa placeat architecto! 
-                    Vero iure, enim praesentium dolorum illum dolor neque fuga tempore?
-                  </p>
-                    <button class="button is-medium is-orange is-link is-light mt-6">
-                      Join Us
-                    </button>
-                </div>
-                <div class="column is-half">
-                  <figure class="image is-covered">
-                    <img src="images/slide1.png" alt="sliding image"/>
-                  </figure>
+      <div class="container">
+        <div class="columns">
+            <div class="column is-half">
+              <h1 class="title is-1">Welcome to Temari Share</h1>
+              <h3 class="subtitle pt-2 is-3">Let's Learn Together</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit nesciunt totam modi, 
+                nulla ea, ipsum, vero neque adipisci eos itaque numquam architecto. 
+                Incidunt dignissimos id aliquid harum at consectetur provident?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut nostrum harum 
+                quasi quis molestias vel ad corrupti culpa placeat architecto! 
+                Vero iure, enim praesentium dolorum illum dolor neque fuga tempore?
+              </p>
+              <button class="button is-medium is-orange is-link is-light mt-6">
+                Join Us
+              </button>
+            </div>
+            
+            <div class="column is-half">
+              <div class="container">
+                <div id="carousel-demo" class="carousel" style="overflow: hidden">
+                  <div class="item-1">
+                    <figure class="image is-covered">
+                      <img src="images/slide1.png" alt="sliding image"/>
+                    </figure>
+                  </div>
+                  <div class="item-2">
+                    <figure class="image is-covered">
+                      <img src="images/slide2.jpg" alt="sliding image"/>
+                    </figure>
+                  </div>
+                  <div class="item-3">
+                    <figure class="image is-covered">
+                      <img src="images/slide3.jpg" alt="sliding image"/>
+                    </figure>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
       <section class="section has-background-white-ter">
         <div class="container">
@@ -49,16 +64,106 @@
             <h3 class="title is-1 mb-6">Resources</h3>
           </div>
           <div class="columns is-multiline">
+            <!--column 1-->
             <div class="column is-3">
               <div class="card">
                 <div class="card-content">
                   <div class="has-text-centered">
-                    <img src="images/card-item-1.jfif"/>
+                    <img src="images/electronics.png"/>
+                  </div>
+                  <h3 class="title is-3 has-text-centered">Electronics</h3>
+                  <p class="has-text-centered">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere 
+                      distinctio magni tenetur, debitis laboriosam suscipit id?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--column 2-->
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-content">
+                  <div class="has-text-centered">
+                    <img src="images/dld.png"/>
+                  </div>
+                  <h3 class="title is-3 has-text-centered">Digital Logic Design</h3>
+                  <p class="has-text-centered">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere 
+                      distinctio magni tenetur
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--column 3-->
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-content">
+                  <div class="has-text-centered">
+                    <img src="images/python.png"/>
                   </div>
                   <h3 class="title is-3 has-text-centered">Python</h3>
                   <p class="has-text-centered">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere 
                       distinctio magni tenetur, debitis laboriosam suscipit id?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--column 4-->
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-content">
+                  <div class="has-text-centered">
+                    <img src="images/cource.png"/>
+                  </div>
+                  <h3 class="title is-3 has-text-centered">Tutorial</h3>
+                  <p class="has-text-centered">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere 
+                      distinctio magni tenetur
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--column 1 in the second row-->
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-content">
+                  <div class="has-text-centered">
+                    <img src="images/cource.png"/>
+                  </div>
+                  <h3 class="title is-3 has-text-centered">Data Structure</h3>
+                  <p class="has-text-centered">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--column 2 in the second row-->
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-content">
+                  <div class="has-text-centered">
+                    <img src="images/cource.png"/>
+                  </div>
+                  <h3 class="title is-3 has-text-centered">Signal</h3>
+                  <p class="has-text-centered">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere 
+                      distinctio magni tenetur, debitis laboriosam suscipit id?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--column 3 in the second row-->
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-content">
+                  <div class="has-text-centered">
+                    <img src="images/.png"/>
+                  </div>
+                  <h3 class="title is-3 has-text-centered">Network</h3>
+                  <p class="has-text-centered">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem nobis rem facere 
+                      distinctio magni tenetur
                   </p>
                 </div>
               </div>
@@ -69,7 +174,7 @@
           </div>
         </div>
       </section>
-  
+
       <section class="section has-background-grey-light">
         <div class="container has-background-grey-light">
           <div class="footer-main">
@@ -77,8 +182,9 @@
               <div class="column">
                 <h4 class="title is-4">About us</h4>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Quas praesentium quasi maiores, porro alias esse voluptates sequi ipsam! Eos, minus?
+                  Temari Share is a student-centered educational resource management system 
+                  that allows students to share modules, presentations, documents, tutorial videos, 
+                  projects, assignments, and other educational resources.
                 </p>
               </div>
               <div class="column">
@@ -89,31 +195,48 @@
                 </p>
               </div>
               <div class="column">
-                <h4 class="title is-4">Other</h4>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea labore necessitatibus perspiciatis! Quod, 
-                  consequatur blanditiis!
-                </p>
+                <h4 class="title is-4">Supported by</h4>
+                <div>
+                  <img src="images/baqela_logo.png" alt="baqela logo">
+                </div>
               </div>
               <div class="column">
+                <div>
+                  <h4 class="title is-4">Contact Us</h4>
+                  <div class="pb-2">
+                    <a href="tel:251912687901">+251912687901</a>
+                  </div>
+                  <div class="pb-2">
+                    <a href="tel:251972586160">+251972586160</a>
+                  </div>
+                  <div class="pb-2">
+                    <a href="tel:251943068071">+251943068071</a>
+                  </div>
+                  <div class="pb-2">
+                    <a href="mailto:info@temarishare.com">info@temarishare.com</a>
+                  </div>
+                  <div class="pb-4">
+                    <a>Tulu Dimtu, Addis Ababa, Ethiopia</a>
+                  </div>
+                </div>
                 <h4 class="title is-4">Follow Us</h4>
                 <div class="buttons">
-                  <a class="button has-background-grey-light is-medium is-facebook is-inverted">
+                  <a class="button has-background-grey-light is-large is-facebook is-inverted">
                     <span class="icon">
                       <i class="fab fa-facebook fa-lg"></i>
                     </span>
                   </a>
-                  <a class="button has-background-grey-light is-medium is-instagram is-inverted">
+                  <a class="button has-background-grey-light is-large is-instagram is-inverted">
                     <span class="icon">
                       <i class="fab fa-instagram fa-lg"></i>
                     </span>
                   </a>
-                  <a class="button has-background-grey-light is-medium is-twitter is-inverted">
+                  <a class="button has-background-grey-light is-large is-twitter is-inverted">
                     <span class="icon">
                       <i class="fab fa-twitter fa-lg"></i>
                     </span>
                   </a>
-                  <a class="button has-background-grey-light is-medium is-youtube is-inverted">
+                  <a class="button has-background-grey-light is-large is-youtube is-inverted">
                     <span class="icon">
                       <i class="fab fa-youtube fa-lg"></i>
                     </span>
@@ -131,3 +254,12 @@
       </section>
     </body>
   </html>
+
+  <!--sample JS which will be eliminated soon-->
+  <script>
+    bulmaCarousel.attach('#carousel-demo', {
+      initialSlide: 0,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+    });
+  </script>
