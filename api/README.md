@@ -6,7 +6,10 @@
 sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
 pip install mysqlclient
 
-# create vertual env
+# set up database(edit setup_db.sql to set up different user)
+cat setup_db.sql | mysql -u root -p
+
+# create and activate virtual environment
 python3 -m venv .venv
 . .venv/bin/activate
 

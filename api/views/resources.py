@@ -4,10 +4,10 @@ from app import db
 from models.Resource import Resource
 
 
-bp = Blueprint("resource", __name__, url_prefix='/resource')
+bp = Blueprint("resources", __name__, url_prefix='/resource')
 
 
-@bp.route("/", methods=['GET'])
+@bp.route("/")
 def get_resources():
     all_resources = Resource.query.all()
     return jsonify([i.to_dict() for i in all_resources])
@@ -17,7 +17,9 @@ def get_resources():
 def get_resource(id):
     resource = Resource.query.filter(Resource.id == id).first_or_404()
     if request.method == 'PUT':
-        resource.update()
+        args = request.get_json()
+        resource.update(**args)
+        db.session.commit()
     elif request.method == 'DELETE':
         db.session.delete(resource)
         db.session.commit()

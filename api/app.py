@@ -5,9 +5,11 @@ from flask_migrate import Migrate
 from os import getenv
 
 db = SQLAlchemy()
+migrate = Migrate()
 
 
 def create_app():
+    """configure app"""
     app = Flask(__name__)
     USER = getenv('DB_USER') or 'temari'
     PWD = getenv('DB_PWD') or 'temari_pwd'
@@ -16,7 +18,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = url
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
-    Migrate(app, db)
+    migrate.init_app(app, db)
 
     @app.route('/status')
     def status():
@@ -24,9 +26,15 @@ def create_app():
 
     @app.errorhandler(404)
     def not_found(e):
-        return {'error': 'not found(404)'}, 404
+        return {'error': 'Not found(404)'}, 404
 
-    from views import resources
+    @app.errorhandler(500)
+    def server_err(e):
+        return {'error': 'Internal Server Error(500)'}, 500
+
+    from views import resources, users, department
     app.register_blueprint(resources.bp)
+    app.register_blueprint(users.bp)
+    app.register_blueprint(department.bp)
 
     return app

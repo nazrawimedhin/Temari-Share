@@ -8,7 +8,7 @@ class User(db.Model, Base):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(80), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
     profile_pic = db.Column(db.String(255))
 
@@ -18,6 +18,17 @@ class User(db.Model, Base):
     resources = db.relationship('Resource', order_by='Resource.title',
                                 back_populates="user",
                                 cascade="all, delete, delete-orphan")
+
+    def to_dict(self):
+        res = super().to_dict()
+        if 'password' in res:
+            del res['password']
+        return res
+
+    def update(self, **args):
+        if 'password' in args:
+            del args['password']
+        super().update(**args)
 
     def __repr__(self):
         return f'<User "{self.username}"-{self.email}>'
