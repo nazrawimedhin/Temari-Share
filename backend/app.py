@@ -24,6 +24,11 @@ def create_app():
     def status():
         return {'status': 'OK'}
 
+    @app.teardown_appcontext
+    def commit_db(e):
+        """commits any modification"""
+        db.session.commit()
+
     @app.errorhandler(404)
     def not_found(e):
         return {'error': 'Not found(404)'}, 404
@@ -32,9 +37,7 @@ def create_app():
     def server_err(e):
         return {'error': 'Internal Server Error(500)'}, 500
 
-    from views import resources, users, department
-    app.register_blueprint(resources.bp)
-    app.register_blueprint(users.bp)
-    app.register_blueprint(department.bp)
+    from api import v1
+    app.register_blueprint(v1.bp)
 
     return app
