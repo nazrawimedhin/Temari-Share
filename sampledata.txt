@@ -1,0 +1,26 @@
+--- users
+insert into users (username, email, password, role_id) values ('mjosephs0', 'mstannard0@ed.gov', 'ZTK8tJ', 1);
+insert into users (username, email, password, role_id) values ('gbeamiss1', 'kbontoft1@admin.ch', 'RIwUNeUJ2S2Z', 2);
+insert into users (username, email, password, role_id) values ('rimpleton2', 'iizakson2@zdnet.com', '2BgzpfdI', 3);
+insert into users (username, email, password, role_id) values ('rrozet4', 'rsturdey4@biglobe.ne.jp', 'iGgkDYQ2Xv', 2);
+insert into users (username, email, password, role_id) values ('jmactrustie3', 'gboraston3@theatlantic.com', 'eL69xf', 3);
+insert into users (username, email, password, role_id) values ('lsinisbury5', 'wfugere5@google.com.hk', 'lToO2LkeL2u', 3);
+insert into users (username, email, password, role_id) values ('atreneman6', 'jtitt6@cdbaby.com', 'XOcR0pCH', 7);
+insert into users (username, email, password, role_id) values ('dbaumann7', 'pscowen7@squarespace.com', 'CTK4b2urkz', 3);
+insert into users (username, email, password, role_id) values ('kstemson8', 'dskerritt8@reddit.com', 'LkxJ5VlJiM6', 2);
+insert into users (username, email, password, role_id) values ('agittose9', 'apolding9@un.org', 'runizCgHtH', 3);
+
+
+--- resources
+
+res1 = Resource(title='Pelecanus occidentalis', description='Pelecanus occidentalis', dept_id, user_id, data) values ('', 'Dilation of Bladder, Endo', 1, 1, 'placeholder.png');
+res1 = Resource(title = 'Columba livia',description = 'Destruction of Right Metacarpal Percutaneous Approach',dept_id = 2,user_id = 2, data = 'placeholder.png';
+res1 = Resource(title=
+, description, dept_id, user_id, data) values ('Pseudalopex gymnocercus', 'Inspection of Right Acromioclavicular Joint, Open Approach', 3, 3, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Ploceus intermedius', 'Revision of Synth Sub in Thor Vertebra, Perc Approach', 4, 19, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Pycnonotus nigricans', 'Excision of Common Bile Duct, Perc Endo Approach, Diagn', 4, 5, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Procyon lotor', 'Revision of Drainage Device in Adrenal Gland, Open Approach', 6, 19, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Bucorvus leadbeateri', 'Drainage of Right Hepatic Duct, Percutaneous Approach', 7, 21, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Cercopithecus aethiops', 'Restrict Mid Esophag w Intralum Dev, Perc Endo', 4, 23, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Plegadis ridgwayi', 'Revision of Infusion Device in Lower Back, Open Approach', 9, 23, 'placeholder.png');
+res1 = Resource(title=, description, dept_id, user_id, data) values ('Francolinus coqui', 'Drainage of R Low Extrem with Drain Dev, Open Approach', 10, 18, 'placeholder.png');
