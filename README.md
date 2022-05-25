@@ -1,6 +1,6 @@
 # Temari Share ~ Let’s learn together
 
-![logo](logo.png)
+![logo](images/logo.png)
 
 ## Introduction
 
