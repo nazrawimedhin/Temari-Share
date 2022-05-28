@@ -1,2 +1,4 @@
 index_demo.html
 template.html
+__pycache__/
+.venv/
