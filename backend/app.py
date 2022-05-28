@@ -1,11 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
+from flask_jwt_extended import (
+    JWTManager, get_jwt, create_access_token,
+    get_jwt_identity, set_access_cookies)
+from datetime import datetime, timedelta, timezone
 from os import getenv
 
 db = SQLAlchemy()
 migrate = Migrate()
+jwt = JWTManager()
 
 
 def create_app():
@@ -17,8 +21,14 @@ def create_app():
     url = f'mysql://{USER}:{PWD}@localhost/{DB}'
     app.config['SQLALCHEMY_DATABASE_URI'] = url
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = getenv('SECRET_KEY') or 'dev'
+    app.config["JWT_TOKEN_LOCATION"] = ["headers", "cookies"]
+
+    # change this to true on production
+    app.config["JWT_COOKIE_SECURE"] = False
     db.init_app(app)
     migrate.init_app(app, db)
+    jwt.init_app(app)
 
     @app.route('/status')
     def status():
@@ -29,15 +39,29 @@ def create_app():
         """commits any modification"""
         db.session.commit()
 
-    @app.errorhandler(404)
-    def not_found(e):
-        return {'error': 'Not found(404)'}, 404
+    @jwt.user_lookup_loader
+    def user_lookup_callback(_jwt_header, jwt_data):
+        identity = jwt_data["sub"]
+        from models import User
+        return User.query.filter_by(username=identity).one_or_none()
 
-    @app.errorhandler(500)
-    def server_err(e):
-        return {'error': 'Internal Server Error(500)'}, 500
+    @app.after_request
+    def refresh_expiring_jwts(response):
+        try:
+            exp_timestamp = get_jwt()["exp"]
+            now = datetime.now(timezone.utc)
+            target_timestamp = datetime.timestamp(now + timedelta(minutes=30))
+            if target_timestamp > exp_timestamp:
+                access_token = create_access_token(identity=get_jwt_identity())
+                set_access_cookies(response, access_token)
+            return response
+        except (RuntimeError, KeyError):
+            # Case where there is not a valid JWT
+            return response
 
     from api import v1
+    import auth
     app.register_blueprint(v1.bp)
+    app.register_blueprint(auth.bp)
 
     return app
