@@ -12,56 +12,57 @@
   </head>
 
   <body>
-    <nav class="navbar has-shadow is-white">
-      <div class="navbar-brand">
-        <a class="navbar-item">
-          <img src="images/logo.png" alt="site-logo">
-        </a>
-        <a class="navbar-burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item">My account</a>
-          <a class="navbar-item">About</a>
+    <section>
+      <nav class="navbar has-shadow py-2 mb-6" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <img src="images/logo.png">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-      </div>
-    </nav>
-
-    <section class="hero is-medium">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h2 class="subtitle">
-            For you
-          </h2>
+        <!--this will be updated-->
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Profile
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  Login
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </nav>
     </section>
+    
+    <div class="container">
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column">
+          <div class="is-centered search-box ">
+            <input class="input is-rounded" type="text" placeholder="Search">
+          </div>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
 
     <section class="blog-posts">
       <div class="container">
         <div class="columns">
           <div class="column is-10 is-offset-1">
             <div class="columns featured-post is-multiline">
-              <div class="column is-12 post">
-                <article class="columns featured">
-                  <div class="column is-7 post-img ">
-                    <img src="https://cdn.emk.dev/templates/featured-image.png" alt="">
-                  </div>
-                  <div class="column is-5 featured-content va">
-                    <div>
-                      <h3 class="heading post-category">Category Name</h3>
-                      <h1 class="title post-title">Post Title</h1>
-                      <p class="post-excerpt"><a href="#">walks you to the file</a></p>
-                      <br>
-                      <a href="#" class="button is-info">Read More</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
             </div>
             <hr>
             <div class="columns is-multiline">
@@ -70,12 +71,11 @@
                   <div class="column is-12 post-img">
                     <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
                   </div>
-                  <div class="column is-12 featured-content ">
+                  <div class="column is-12 featured-content">
                     <h3 class="heading post-category">Category Name</h3>
                     <h1 class="title post-title">Post Title</h1>
-                    <p class="post-excerpt"><a href="#">walks you to the file</a></p>
                     <br>
-                    <a href="#" class="button is-info">Read More</a>
+                    <a href="#" class="button is-info">Open File</a>
                   </div>
                 </article>
               </div>
@@ -87,9 +87,8 @@
                   <div class="column is-12 featured-content ">
                     <h3 class="heading post-category">Category Name</h3>
                     <h1 class="title post-title">Post Title</h1>
-                    <p class="post-excerpt"><a href="#">walks you to the file</a></p>
                     <br>
-                    <a href="#" class="button is-info">Read More</a>
+                    <a href="#" class="button is-info">Open File</a>
                   </div>
                 </article>
               </div>
@@ -101,9 +100,8 @@
                   <div class="column is-12 featured-content ">
                     <h3 class="heading post-category">Category Name</h3>
                     <h1 class="title post-title">Post Title</h1>
-                    <p class="post-excerpt"><a href="#">walks you to the file</a></p>
                     <br>
-                    <a href="#" class="button is-info">Read More</a>
+                    <a href="#" class="button is-info">Open File</a>
                   </div>
                 </article>
               </div>
@@ -115,9 +113,8 @@
                   <div class="column is-12 featured-content ">
                     <h3 class="heading post-category">Category Name</h3>
                     <h1 class="title post-title">Post Title</h1>
-                    <p class="post-excerpt"><a href="#">walks you to the file</a></p>
                     <br>
-                    <a href="#" class="button is-info">Read More</a>
+                    <a href="#" class="button is-info">Open File</a>
                   </div>
                 </article>
               </div>
@@ -129,9 +126,47 @@
                   <div class="column is-12 featured-content">
                     <h3 class="heading post-category">Category Name</h3>
                     <h1 class="title post-title">Post Title</h1>
-                    <p class="post-excerpt"><a href="#">walks you to the file</a></p>
                     <br>
-                    <a href="#" class="button is-info">Read More</a>
+                    <a href="#" class="button is-info">Open File</a>
+                  </div>
+                </article>
+              </div>
+              <div class="column post is-4">
+                <article class="columns is-multiline">
+                  <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                  </div>
+                  <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Post Title</h1>
+                    <br>
+                    <a href="#" class="button is-info">Open File</a>
+                  </div>
+                </article>
+              </div>
+              <div class="column post is-4">
+                <article class="columns is-multiline">
+                  <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                  </div>
+                  <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Post Title</h1>
+                    <br>
+                    <a href="#" class="button is-info">Open File</a>
+                  </div>
+                </article>
+              </div>
+              <div class="column post is-4">
+                <article class="columns is-multiline">
+                  <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                  </div>
+                  <div class="column is-12 featured-content">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Post Title</h1>
+                    <br>
+                    <a href="#" class="button is-info">Open File</a>
                   </div>
                 </article>
               </div>
@@ -139,5 +174,58 @@
           </div>
         </div>
     </section>
+
+    <section class="section has-background-grey-light">
+      <div class="container has-background-grey-light">
+        <div class="footer-main">
+          <div class="columns has-background-grey-light">
+            <div class="column is-3">
+              <h4 class="title is-4">Supported by</h4>
+              <div>
+                <img src="images/" alt="baqela logo">
+              </div>
+            </div>
+            <div class="column is-6">
+              <h4 class="title is-4">Services</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam voluptatibus 
+                voluptates eaque odio omnis deserunt laudantium aut ratione debitis quaerat.
+              </p>
+            </div>
+            <div class="column is-3">
+              <h4 class="title is-4">Follow</h4>
+              <div class="buttons">
+                <a class="button has-background-grey-light is-medium is-facebook is-inverted">
+                  <span class="icon">
+                    <i class="fab fa-facebook fa-lg"></i>
+                  </span>
+                </a>
+                <a class="button has-background-grey-light is-medium is-instagram is-inverted">
+                  <span class="icon">
+                    <i class="fab fa-instagram fa-lg"></i>
+                  </span>
+                </a>
+                <a class="button has-background-grey-light is-medium is-twitter is-inverted">
+                  <span class="icon">
+                    <i class="fab fa-twitter fa-lg"></i>
+                  </span>
+                </a>
+                <a class="button has-background-grey-light is-medium is-youtube is-inverted">
+                  <span class="icon">
+                    <i class="fab fa-youtube fa-lg"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer-secondary mt-6">
+        <div class="content has-text-centered has-text-weight-bold">
+          Copyright © 2022 Temari Share
+        </div>
+      </footer>
+    </section>
+
   </body>
 </html>
