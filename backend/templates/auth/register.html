@@ -1,64 +1,154 @@
-{% extends 'base.html' %} {% block content %}
-<div class="is-flex is-justify-content-center is-align-items-center m-4">
-  <div class="card">
-    <div class="card-content">
-      <h1 class="title">Register</h1>
-      <hr />
-      <form method="post">
-        <div class="field">
-          <div class="label">Username</div>
-          <div class="control">
-            <input
-              class="input"
-              type="text"
-              name="username"
-              placeholder="Username"
-            />
+  {% extends 'base.html' %} {% block title %}Register{% endblock title %} {% block
+  head %}
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&display=swap"
+  />
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', filename='css/register.css')}}"
+  />
+  <script
+    src="https://kit.fontawesome.com/15181efa86.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{{url_for('static', filename='js/register.js')}}"></script>
+  {% endblock head %} {% block content %}
+  <section class="container">
+    <div class="columns is-multiline">
+      <div class="column is-8 is-offset-2 register">
+        <div class="columns">
+          <div class="column left">
+            <figure class="image is-covered">
+              <img
+                src="{{url_for('static', filename='images/logo.png')}}"
+                alt="image"
+              />
+            </figure>
+            <div class="pt-4">
+              <p class="description has-text-dark">
+                Join our incredible community today to share, learn, and grow with
+                peers.
+              </p>
+            </div>
+          </div>
+          <div class="column right has-text-centered">
+            <h1 class="title is-3">Sign up</h1>
+            <form>
+              <div class="field">
+                <div class="control">
+                  <input
+                    class="input"
+                    name="fullname"
+                    type="text"
+                    placeholder="Full Name"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input
+                    class="input"
+                    name="username"
+                    type="text"
+                    placeholder="Username"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <input
+                    class="input"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input
+                    class="input"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <div class="file has-name" id="profile_pic">
+                  <label class="file-label">
+                    <input class="file-input" type="file" name="profile_pic" />
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label"> profile picture… </span>
+                    </span>
+                    <span class="file-name">
+                      No file uploaded
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <button class="button is-block is-info is-fullwidth">Submit</button>
+              <small
+                ><em
+                  ><strong>Already have an account? </strong
+                  ><a href="{{url_for('auth.login')}}">Login</a></em
+                ></small
+              >
+            </form>
           </div>
         </div>
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input
-              class="input"
-              type="email"
-              name="email"
-              placeholder="example@gmail.com"
-            />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input
-              class="input"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Porfile Picture</label>
-          <div class="file">
-            <label class="file-label">
-              <input class="file-input" type="file" name="profile_pic" />
-              <span class="file-cta">
-                <span class="file-icon">
-                  <i class="fas fa-upload"></i>
-                </span>
-                <span class="file-label"> Choose a file… </span>
+      </div>
+      <div class="column is-8 is-offset-2">
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
               </span>
-            </label>
+              &emsp;
+              <span class="icon">
+                <i class="fab fa-facebook"></i>
+              </span>
+              &emsp;
+              <span class="icon">
+                <i class="fab fa-instagram"></i>
+              </span>
+              &emsp;
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              &emsp;
+              <span class="icon">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
           </div>
-        </div>
-        <div class="field is-grouped-right">
-          <div class="control">
-            <button class="button is-link">Register</button>
+          <div class="level-right">
+            <small
+              class="level-item has-text-dark"
+              style="color: var(--textLight)"
+            >
+              &copy; Temari Share. All Rights Reserved.
+            </small>
           </div>
-        </div>
-      </form>
+        </nav>
+      </div>
     </div>
-  </div>
-</div>
-{% endblock content %}
+  </section>
+  <script>
+    const fileInput = document.querySelector('#profile_pic input[type=file]');
+    fileInput.onchange = () => {
+      if (fileInput.files.length > 0) {
+        const fileName = document.querySelector('#profile_pic .file-name');
+        fileName.textContent = fileInput.files[0].name;
+      }
+    }
+  </script>
+  {% endblock content %}

@@ -11,7 +11,7 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
 @bp.route('/register', methods=['GET', 'POST'])
-def create_user():
+def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -56,11 +56,16 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user.id
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('main.home'))
 
         flash(error)
 
     return render_template('auth/login.html')
+
+
+@bp.route('/login', methods=('GET', 'POST'))
+def forgot_password():
+    pass
 
 
 @bp.before_app_request

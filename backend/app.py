@@ -61,7 +61,10 @@ def create_app():
 
     from api import v1
     import auth
+    import views
     app.register_blueprint(v1.bp)
     app.register_blueprint(auth.bp)
+    app.register_blueprint(views.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app

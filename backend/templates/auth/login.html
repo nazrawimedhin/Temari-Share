@@ -1,38 +1,62 @@
-{% extends 'base.html' %} {% block content %}
-<div class="is-flex is-justify-content-center is-align-items-center">
-  <div class="card">
-    <div class="card-content">
-      <h1 class="title">Login</h1>
-      <form method="post">
-        <div class="field">
-          <div class="label">Username</div>
-          <div class="control">
-            <input
-              class="input"
-              type="text"
-              name="username"
-              placeholder="Username"
-            />
-          </div>
+{% extends 'base.html' %} {% block title %} Login {% endblock title %} {% block
+head %}
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Questrial&display=swap"
+/>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/login.css') }}" />
+<script src="{{url_for('static', filename='js/login.js') }}"></script>
+{% endblock head %} {% block content %}
+<section class="hero has-background-light is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-black">Login</h3>
+        <p class="subtitle has-text-black">Please login to proceed.</p>
+        <div class="box">
+          <figure class="avatar">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" />
+          </figure>
+          <form method="POST" action="">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="text"
+                  name="username"
+                  placeholder="Your username"
+                  autofocus=""
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="password"
+                  name="password"
+                  placeholder="Your Password"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox" />
+                Remember me
+              </label>
+            </div>
+            <button class="button is-block is-info is-medium is-fullwidth">
+              Login <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </button>
+          </form>
         </div>
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input
-              class="input"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-          </div>
-        </div>
-        <div class="field is-grouped-right">
-          <div class="control">
-            <button class="button is-link">Log In</button>
-          </div>
-        </div>
-      </form>
+        <p class="has-text-grey">
+          <a href="{{ url_for('auth.register') }}" target="_blank">Sign Up</a> &nbsp;·&nbsp;
+          <a href="{{ url_for('auth.forgot_password')}}">Forgot Password</a> &nbsp;·&nbsp;
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 {% endblock content %}

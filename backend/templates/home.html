@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block title %}
+Home Page
+{% endblock title %}
+{% block head %}
+<script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/home.css')}}">
+{% endblock head %}
+{% block content %}
+<nav class="navbar has-shadow is-white">
+  <div class="container">
+    
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="{{url_for('static', filename='images/logo.png')}}" alt="site-logo">
+      </a>
+      <a class="navbar-burger">
+        <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item">My account</a>
+      <a class="navbar-item">About</a>
+      {% if g.user %}
+      <div class="navbar-item has-dropdown is-left" id="dropdown" onclick="toggleDropdown()">
+        <a class="navbar-link">Account</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">Account Dashboard</a>
+          <a href="{{url_for('auth.forgot_password') }}" class="navbar-item">Change Password</a>
+          <hr class="navbar-divider">
+            <a
+              href="{{ url_for('auth.logout') }}"
+              class="navbar-item"
+            >
+              Log out
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--
+
+        <a class="navbar-item" href="">
+          <button class="button is-outlined">
+            {{g.user.username + '   '}}
+            Logout
+          </button>
+        </a>
+      -->
+      {% endif %}
+    </div>
+  </div>
+</div>
+</nav>
+
+<section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="subtitle">
+        For you
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="blog-posts">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-10 is-offset-1">
+        <div class="columns featured-post is-multiline">
+          <div class="column is-12 post">
+            <article class="columns featured">
+              <div class="column is-7 post-img ">
+                <img src="https://cdn.emk.dev/templates/featured-image.png" alt="">
+              </div>
+              <div class="column is-5 featured-content va">
+                <div>
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Post Title</h1>
+                  <p class="post-excerpt"><a href="#">walks you to the file</a></p>
+                  <br>
+                  <a href="#" class="button is-info">Read More</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <hr>
+        <div class="columns is-multiline">
+          {% for resource in resources %}
+          <div class="column post is-6">
+            <article class="columns is-multiline">
+              <div class="column is-12 post-img">
+                <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+              </div>
+              <div class="column is-12 featured-content ">
+                <h3 class="heading post-category">{{resource.department.name}}</h3>
+                <h1 class="title post-title">{{resource.title}}</h1>
+                <p class="post-excerpt"><a href="#">{{resource.description}}</a></p>
+                <br>
+                <a href="#" class="button is-info">Read More</a>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>
+<script>
+  function toggleDropdown() {
+    document.querySelector('#dropdown').classList.toggle('is-active');
+  }
+</script>
+{% endblock content %}
