@@ -1,5 +1,7 @@
 # Temari Share ~ Let’s learn together
 
+* **[Temari Share](https://nazrawimedhin.github.io/Temari-Share/)**
+
 ![logo](logo.png)
 
 ## Introduction
@@ -38,6 +40,8 @@ This project is our Portfolio Project, concluding our Foundations Term at [ALX S
 ### Blog Posts
 
 ## Tutorial
+
+* Take a tour of the deployed version at <https://nazrawimedhin.github.io/Temari-Share/>
 
 ## Architecture
 
