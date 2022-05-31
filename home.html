@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home Page</title>
     <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="js/home.js"></script>
+    <title>Home Page</title>
   </head>
 
   <body>
@@ -53,13 +54,13 @@
     
     <div class="container">
       <div class="columns">
-        <div class="column"></div>
-        <div class="column">
+        <div class="column is-3"></div>
+        <div class="column is-6">
           <div class="is-centered search-box ">
             <input class="input is-rounded" type="text" placeholder="Search">
           </div>
         </div>
-        <div class="column"></div>
+        <div class="column is-3"></div>
       </div>
     </div>
 
@@ -71,7 +72,7 @@
             </div>
             <hr>
             <div class="columns is-multiline">
-              <div class="column post is-6">
+              <div class="column post is-6" id="posts">
                 <article class="columns is-multiline">
                   <div class="column is-12 post-img">
                     <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
